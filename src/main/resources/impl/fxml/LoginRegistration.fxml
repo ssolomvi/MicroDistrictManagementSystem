@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="impl.LoginRegistrationController">
+   <children>
+      <AnchorPane fx:id="login_form" prefHeight="340.0" prefWidth="350.0" styleClass="bg-form" stylesheets="@../css/LoginForm.css">
+         <children>
+            <FontAwesomeIconView glyphName="HOME" layoutX="151.0" layoutY="110.0" size="5EM" />
+            <Label layoutX="103.0" layoutY="137.0" styleClass="header" text="Welcome back!">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="login_username" layoutX="50.0" layoutY="199.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield" />
+            <PasswordField fx:id="login_password" layoutX="50.0" layoutY="250.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield" />
+            <FontAwesomeIconView glyphName="USER" layoutX="57.0" layoutY="220.0" size="1.5em" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="57.0" layoutY="272.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Button fx:id="login_btn" layoutX="105.0" layoutY="318.0" mnemonicParsing="false" onAction="#loginAccount" prefHeight="40.0" prefWidth="140.0" styleClass="btn" text="LOGIN" />
+            <Label layoutX="38.0" layoutY="460.0" text="Don't have an account?" />
+            <ComboBox fx:id="login_role" layoutX="198.0" layoutY="455.0" onAction="#switchForm" prefHeight="31.0" prefWidth="114.0" promptText="Choose..." />
+         </children></AnchorPane>
+      <AnchorPane fx:id="admin_form" layoutX="10.0" layoutY="10.0" prefHeight="340.0" prefWidth="350.0" styleClass="bg-form" stylesheets="@../css/LoginForm.css" visible="false">
+         <children>
+            <FontAwesomeIconView glyphName="HOME" layoutX="147.0" layoutY="105.0" size="5EM" />
+            <Label layoutX="96.0" layoutY="126.0" styleClass="header" text="Register Account">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="admin_username" layoutX="50.0" layoutY="199.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield" />
+            <PasswordField fx:id="admin_password" layoutX="50.0" layoutY="250.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield" />
+            <PasswordField fx:id="admin_cPassword" layoutX="50.0" layoutY="302.0" prefHeight="30.0" prefWidth="250.0" promptText="Confirm password" styleClass="textfield" />
+            <Button fx:id="admin_signupBtn" layoutX="110.0" layoutY="354.0" mnemonicParsing="false" onAction="#registerAdmin" prefHeight="40.0" prefWidth="130.0" styleClass="btn" text="SIGN UP" />
+            <FontAwesomeIconView glyphName="USER" layoutX="57.0" layoutY="220.0" size="1.5em" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="57.0" layoutY="272.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label layoutX="57.0" layoutY="458.0" text="Already have an account?" />
+            <Hyperlink fx:id="admin_signin" layoutX="226.0" layoutY="454.0" onAction="#signInForm" styleClass="myLink" text="Sign in" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="57.0" layoutY="324.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label layoutX="154.0" layoutY="156.0" text="admin" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="householder_form" layoutX="10.0" layoutY="10.0" prefHeight="340.0" prefWidth="350.0" styleClass="bg-form" stylesheets="@../css/LoginForm.css" visible="false">
+         <children>
+            <FontAwesomeIconView glyphName="HOME" layoutX="147.0" layoutY="105.0" size="5EM" />
+            <Label layoutX="96.0" layoutY="126.0" styleClass="header" text="Register Account">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="householder_username" layoutX="50.0" layoutY="191.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield" />
+            <PasswordField fx:id="householder_password" layoutX="50.0" layoutY="241.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield" />
+            <PasswordField fx:id="householder_cPassword" layoutX="50.0" layoutY="293.0" prefHeight="30.0" prefWidth="250.0" promptText="Confirm password" styleClass="textfield" />
+            <TextField fx:id="householder_id" layoutX="50.0" layoutY="339.0" prefHeight="30.0" prefWidth="250.0" promptText="ID" styleClass="textfield" />
+            <Button fx:id="householder_signupBtn" layoutX="111.0" layoutY="398.0" mnemonicParsing="false" onAction="#registerHouseholder" prefHeight="40.0" prefWidth="130.0" styleClass="btn" text="SIGN UP" />
+            <FontAwesomeIconView glyphName="USER" layoutX="57.0" layoutY="212.0" size="1.5em" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="57.0" layoutY="263.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label layoutX="57.0" layoutY="458.0" text="Already have an account?" />
+            <Hyperlink fx:id="householder_signin" layoutX="226.0" layoutY="454.0" onAction="#signInForm" styleClass="myLink" text="Sign in" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="57.0" layoutY="315.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label layoutX="133.0" layoutY="156.0" text="Householder" />
+            <FontAwesomeIconView glyphName="CUBE" layoutX="55.0" layoutY="360.0" size="1.5em" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="haumc_form" layoutX="10.0" layoutY="10.0" prefHeight="340.0" prefWidth="350.0" styleClass="bg-form" stylesheets="@../css/LoginForm.css" visible="false">
+         <children>
+            <FontAwesomeIconView glyphName="HOME" layoutX="147.0" layoutY="105.0" size="5EM" />
+            <Label layoutX="96.0" layoutY="126.0" styleClass="header" text="Register Account">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="haumc_username" layoutX="52.0" layoutY="192.0" prefHeight="30.0" prefWidth="250.0" promptText="Username" styleClass="textfield" />
+            <PasswordField fx:id="haumc_password" layoutX="52.0" layoutY="242.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="textfield" />
+            <PasswordField fx:id="haumc_cPassword" layoutX="52.0" layoutY="294.0" prefHeight="30.0" prefWidth="250.0" promptText="Confirm password" styleClass="textfield" />
+            <TextField fx:id="haumc_id" layoutX="52.0" layoutY="344.0" prefHeight="30.0" prefWidth="250.0" promptText="ID" styleClass="textfield" />
+            <Button fx:id="haumc_signupBtn" layoutX="111.0" layoutY="398.0" mnemonicParsing="false" onAction="#registerHAUMC" prefHeight="40.0" prefWidth="130.0" styleClass="btn" text="SIGN UP" />
+            <FontAwesomeIconView glyphName="USER" layoutX="59.0" layoutY="213.0" size="1.5em" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="59.0" layoutY="264.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label layoutX="57.0" layoutY="458.0" text="Already have an account?" />
+            <Hyperlink fx:id="haumc_signin" layoutX="226.0" layoutY="454.0" onAction="#signInForm" styleClass="myLink" text="Sign in" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="59.0" layoutY="316.0" size="1.5em" text="" wrappingWidth="14.142857551574707" />
+            <Label alignment="CENTER" layoutX="63.0" layoutY="156.0" text="Housing &amp; management company" textAlignment="CENTER" />
+            <FontAwesomeIconView glyphName="CUBE" layoutX="57.0" layoutY="365.0" size="1.5em" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

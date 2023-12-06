@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="impl.HAUMCMainFormController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/MainForm.css">
+            <children>
+                <BorderPane layoutX="299.0" layoutY="194.0" prefHeight="600.0" prefWidth="1100.0" styleClass="main-bg" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <left>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                        <VBox prefHeight="638.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER">
+                                 <children>
+                                    <FontAwesomeIconView fill="#e0b1cb" glyphName="WRENCH" size="5em">
+                                       <VBox.margin>
+                                          <Insets top="30.0" />
+                                       </VBox.margin>
+                                    </FontAwesomeIconView>
+                                    <Label fx:id="greet_username" styleClass="header" text="Welcome! ">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Line endX="73.5" startX="-100.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </Line>
+                                 </children>
+                              </VBox>
+                                      <VBox alignment="TOP_CENTER" prefHeight="535.0" prefWidth="200.0">
+                                          <children>
+                                              <Button fx:id="haumcServicedBuildingsBtn" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="170.0" styleClass="nav-btn" text="Serviced buildings">
+                                                  <VBox.margin>
+                                                      <Insets bottom="20.0" top="20.0" />
+                                                  </VBox.margin>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="BUILDING_ALT" size="1.7EM" styleClass="nav-font-awesome" />
+                                       </graphic>
+                                              </Button>
+                                              <Button fx:id="haumcClientsBtn" mnemonicParsing="false" onAction="#switchForm" prefHeight="30.0" prefWidth="170.0" styleClass="nav-btn" text="Clients">
+                                                  <VBox.margin>
+                                                      <Insets bottom="10.0" />
+                                                  </VBox.margin>
+                                       <graphic>
+                                          <FontAwesomeIconView glyphName="USERS" size="1.7EM" styleClass="nav-font-awesome" />
+                                       </graphic>
+                                              </Button>
+                                          </children>
+                                      </VBox>
+                           </children>
+                        </VBox>
+                                <Button fx:id="signOutBtn" mnemonicParsing="false" onAction="#signOutByBtn" prefHeight="38.0" prefWidth="140.0" styleClass="btn" text="Sign out" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                                    <graphic>
+                                        <FontAwesomeIconView glyphName="SIGN_OUT" size="1.5em" />
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                    <center>
+                        <StackPane styleClass="white-bg" BorderPane.alignment="CENTER">
+                            <children>
+                                <VBox fx:id="servicedForm" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="radius">
+                                    <children>
+                                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="375.0">
+                                                  <children>
+                                                      <FontAwesomeIconView glyphName="KEY" size="2em">
+                                                          <HBox.margin>
+                                                              <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                          </HBox.margin>
+                                                      </FontAwesomeIconView>
+                                                      <Label styleClass="header" text="Serviced buildings info" />
+                                                  </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                              </HBox>
+                              <TableView fx:id="servicedTableview" prefHeight="313.0" prefWidth="860.0">
+                                <columns>
+                                  <TableColumn fx:id="servicedColStreetName" prefWidth="375.0" text="Street" />
+                                  <TableColumn fx:id="servicedColPhysicalNumber" prefWidth="254.0" text="Building physical number " />
+                                    <TableColumn fx:id="servicedColFloorsCount" prefWidth="230.0" text="Floors count" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                              <Button fx:id="servicedGetReport" mnemonicParsing="false" onAction="#servicedGetReportByButton" prefHeight="41.0" prefWidth="192.0" styleClass="btn" text="Get report">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <graphic>
+                                    <FontAwesomeIconView glyphName="FOLDER_OPEN_ALT" size="1.7em" />
+                                 </graphic>
+                              </Button>
+                                    </children>
+                                    <StackPane.margin>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </StackPane.margin>
+                                </VBox>
+                                <VBox fx:id="clientsForm" prefHeight="200.0" prefWidth="100.0" visible="false">
+                                    <StackPane.margin>
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </StackPane.margin>
+                                    <children>
+                                          <AnchorPane prefHeight="300.0" prefWidth="880.0" styleClass="radius">
+                                              <children>
+                                                  <VBox layoutX="20.0" layoutY="20.0" prefHeight="225.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <children>
+                                                          <HBox alignment="CENTER_LEFT">
+                                                              <children>
+                                                                  <FontAwesomeIconView glyphName="INFO_CIRCLE" size="2.5em" text="">
+                                                                      <HBox.margin>
+                                                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                                                      </HBox.margin>
+                                                                  </FontAwesomeIconView>
+                                                                  <Label styleClass="header" text="Clients" />
+                                                              </children>
+                                                          </HBox>
+                                          <TableView fx:id="clientsTableview">
+                                            <columns>
+                                              <TableColumn fx:id="clientsColFirstName" prefWidth="136.0" text="First name" />
+                                              <TableColumn fx:id="clientsColLastName" prefWidth="137.0" text="Last name" />
+                                                <TableColumn fx:id="clientsColDateOfBirth" prefWidth="113.0" text="Date of birth" />
+                                                <TableColumn fx:id="clientsColGender" prefWidth="131.0" text="Gender" />
+                                                <TableColumn fx:id="clientsColContactNumber" prefWidth="165.0" text="Contact number" />
+                                                <TableColumn fx:id="clientsColEmail" prefWidth="177.0" resizable="false" text="Email" />
+                                            </columns>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </TableView>
+                                                      </children>
+                                                  </VBox>
+                                              </children>
+                                              <padding>
+                                                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                              </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="findRealEstateResults" prefHeight="188.0" prefWidth="880.0">
+                                              <children>
+                                                  <VBox alignment="CENTER" layoutX="298.0" prefHeight="191.0" prefWidth="284.0" styleClass="radius" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="298.0" AnchorPane.topAnchor="0.0">
+                                                      <children>
+                                                          <HBox alignment="CENTER_LEFT">
+                                                              <children>
+                                                                  <FontAwesomeIconView glyphName="EYE" size="2em">
+                                                                      <HBox.margin>
+                                                                          <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                                                                      </HBox.margin>
+                                                                  </FontAwesomeIconView>
+                                                                  <Label prefHeight="30.0" prefWidth="91.0" styleClass="header" text="Results:">
+                                                                      <font>
+                                                                          <Font size="18.0" />
+                                                                      </font>
+                                                                  </Label>
+                                                              </children>
+                                                          </HBox>
+                                                          <HBox maxWidth="500.0" prefWidth="300.0">
+                                                              <children>
+                                                                  <Label fx:id="findRealEstateLabelFoundRP" text="Found: " />
+                                                                  <Label fx:id="clientsLabel" text="Label">
+                                                                      <HBox.margin>
+                                                                          <Insets left="10.0" right="10.0" />
+                                                                      </HBox.margin>
+                                                                  </Label>
+                                                              </children>
+                                                              <padding>
+                                                                  <Insets bottom="10.0" right="10.0" top="10.0" />
+                                                              </padding>
+                                             <VBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </VBox.margin>
+                                                          </HBox>
+                                          <Button fx:id="clientGetReport" mnemonicParsing="false" onAction="#clientGetReportByButton" prefHeight="41.0" prefWidth="192.0" styleClass="btn" text="Get report">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="FOLDER_OPEN_ALT" size="1.7em" />
+                                             </graphic>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" top="20.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                                      </children>
+                                                      <padding>
+                                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                      </padding>
+                                                  </VBox>
+                                              </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                                          </AnchorPane>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </center>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
